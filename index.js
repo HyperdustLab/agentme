@@ -34,8 +34,8 @@ app.post('/transfer', async (req, res) => {
     })
 
     let userWallet = await Wallet.import({
-        seed: seed,
-        walletId: walletId,
+        seed: process.env.SEED,
+        walletId: process.env.WALLETID,
     })
 
     await userWallet.listAddresses()

@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 })
 
 app.post('/transfer', async (req, res) => {
-    const { walletAddress } = req.body
+    const { walletAddress, amount } = req.body
 
     const coinbase = new Coinbase({
         apiKeyName: process.env.NAME,
@@ -34,15 +34,16 @@ app.post('/transfer', async (req, res) => {
     })
 
     let userWallet = await Wallet.import({
-        seed: process.env.SEED,
-        walletId: process.env.WALLETID,
+        seed: seed,
+        walletId: walletId,
     })
+
     await userWallet.listAddresses()
 
     let transfer
     try {
         transfer = await userWallet?.createTransfer({
-            amount: 0.00000001,
+            amount: amount,
             assetId: 'eth',
             destination: walletAddress,
         })

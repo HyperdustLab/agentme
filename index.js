@@ -49,6 +49,7 @@ app.post('/transfer', async (req, res) => {
         })
         res.send({ success: true })
     } catch (e) {
+        console.error(e)
         res.sendStatus(500)
     }
 })
@@ -69,7 +70,7 @@ app.post('/getBalance', async (req, res) => {
     let balance = await userWallet.getBalance(Coinbase.assets.Eth)
 
     console.info(balance)
-    res.send(balance)
+    res.send({ balance })
 })
 
 app.listen(3000, () => {

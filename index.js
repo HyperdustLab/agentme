@@ -53,6 +53,25 @@ app.post('/transfer', async (req, res) => {
     }
 })
 
+app.post('/getBalance', async (req, res) => {
+    const { seed, walletId } = req.body
+
+    const coinbase = new Coinbase({
+        apiKeyName: process.env.NAME,
+        privateKey: process.env.PRIVATE_KEY.replaceAll('\\n', '\n'),
+    })
+
+    let userWallet = await Wallet.import({
+        seed: seed,
+        walletId: walletId,
+    })
+
+    let balance = await userWallet.getBalance(Coinbase.assets.Eth)
+
+    console.info(balance)
+    res.send(balance)
+})
+
 app.listen(3000, () => {
     logger.info('Server is running on port 3000')
 })

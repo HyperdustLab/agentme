@@ -20,7 +20,6 @@ const { Coinbase, Transfer, Wallet } = require('@coinbase/coinbase-sdk')
 app.use(bodyParser.json())
 
 app.use((req, res, next) => {
-    //针对跨域进行配置，允许任何源访问
     res.header('Access-Control-Allow-Origin', '*')
     next()
 })

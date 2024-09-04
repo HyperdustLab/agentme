@@ -9,7 +9,6 @@ const instance = axios.create({
     timeout: 10000,
 })
 
-// 请求拦截器
 instance.interceptors.request.use(request => {
     logger.info(`Starting Request: ${request.method.toUpperCase()} ${request.url}`)
     logger.info(`Request Data: ${JSON.stringify(request.data)}`)

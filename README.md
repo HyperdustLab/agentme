@@ -12,7 +12,7 @@ https://hub.docker.com/repository/docker/hyperagi/hyperagi-agentme-wallet/genera
 
 The wallet of airdrop agent: [0xF965854059298e02A6DeE68EE54C329bc37986eA](https://sepolia.basescan.org/address/0xF965854059298e02A6DeE68EE54C329bc37986eA)
 
-APIs
+APIs for UE client
 receive the aridrop 
 https://app.hyperagi.network/api/mgn/agent/receive
 

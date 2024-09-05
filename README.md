@@ -2,12 +2,12 @@
 
 This is the demo with two agents driven by LLM running on chain. One agent chating with human user and recive the instructions from human to walk to another airdrop agent in a simualated virtual cyber city. The airdrop agent transfer amount of token to the coming agent near by.
 
-[demo-videoclip.mp4
-](https://github.com/HyperdustLab/hyperagi-agentme-wallet/blob/main/demo-videoclip.mp4)
 
-![image](demo1.jpg)
+Demo Video Below
 
-
+<a href="https://vimeo.com/1006521626" target="_blank">
+    <img src="demo1.jpg" alt="Watch the demo video on Vimeo" width="400" />
+</a>
 
 
 deploy this nodejs on the docker
